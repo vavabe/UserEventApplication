@@ -25,13 +25,14 @@ public class DbDataStorage : IDataStorage
             conn.Open();
 
             using var cmd = new NpgsqlCommand(
-                    "INSERT INTO user_event_stats (user_id, event_type, count) " +
-                    "VALUES (@userId, @eventType, 1) " +
-                    "ON CONFLICT (user_id, event_type) " +
+                    "INSERT INTO user_event_stats (user_id, event_type, count, time_interval) " +
+                    "VALUES (@userId, @eventType, 1, @timeInterval) " +
+                    "ON CONFLICT (user_id, event_type, time_interval) " +
                     "DO UPDATE SET count = user_event_stats.count + 1;",
                     conn);
             cmd.Parameters.AddWithValue("userId", userEvent.UserId);
             cmd.Parameters.AddWithValue("eventType", userEvent.EventType);
+            cmd.Parameters.AddWithValue("timeInterval", userEvent.Timestamp);
             cmd.ExecuteNonQuery();
         }
         catch (Exception ex)
