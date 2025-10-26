@@ -1,17 +1,16 @@
 using MSDisEventApplication.Extensions;
 
-namespace MSDisEventApplication
+namespace MSDisEventApplication;
+
+public class Program
 {
-    public class Program
+    public static void Main(string[] args)
     {
-        public static void Main(string[] args)
-        {
-            var builder = WebApplication.CreateBuilder(args);
+        var builder = WebApplication.CreateBuilder(args);
 
-            builder.Services.AddApplicationServices(builder.Configuration);
-            var app = builder.Build();
+        builder.Services.AddApplicationServices(builder.Configuration);
+        var app = builder.Build();
 
-            app.Run();
-        }
+        app.Run();
     }
 }

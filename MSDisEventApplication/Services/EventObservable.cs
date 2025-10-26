@@ -1,7 +1,5 @@
 ﻿using MSDisEventApplication.Models;
 using MSDisEventApplication.Services.Interfaces;
-using System;
-using System.Collections.Generic;
 using System.Reactive.Subjects;
 
 namespace MSDisEventApplication.Services;

@@ -1,8 +1,6 @@
-﻿namespace MSDisEventApplication.Options
+﻿namespace MSDisEventApplication.Options;
+
+public class DbOptions
 {
-    public class DbOptions
-    {
-        public const string Name = "Db";
-        public string ConnectionString { get; set; } = string.Empty;
-    }
+    public string ConnectionString { get; set; } = string.Empty;
 }

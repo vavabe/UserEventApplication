@@ -1,15 +1,9 @@
 ﻿using Confluent.Kafka;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using MSDisEventApplication.Models;
 using MSDisEventApplication.Options;
 using MSDisEventApplication.Services.Interfaces;
 using Newtonsoft.Json;
-using System.Reflection;
-using System.Text.Json;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace MSDisEventApplication.Services;
 
@@ -63,7 +57,7 @@ public class KafkaBackgroundService : IHostedService
                 }
                 catch (ConsumeException ex)
                 {
-                    _logger.LogError($"Ошибка потребления сообщения: {ex.Error.Reason}");
+                    _logger.LogError($"Ошибка получения сообщения: {ex.Error.Reason}");
                 }
                 catch (Exception ex)
                 {
@@ -74,7 +68,7 @@ public class KafkaBackgroundService : IHostedService
         }
         catch (OperationCanceledException)
         {
-            _logger.LogInformation("Kafka потребитель остановлен.");
+            _logger.LogInformation("Kafka consumer остановлен.");
         }
         finally
         {

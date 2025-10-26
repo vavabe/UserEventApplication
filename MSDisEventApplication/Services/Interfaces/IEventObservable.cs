@@ -1,13 +1,10 @@
-﻿using MSDisEventApplication.Models;
+﻿namespace MSDisEventApplication.Services.Interfaces;
 
-namespace MSDisEventApplication.Services.Interfaces
+public interface IEventObservable<T> : IObservable<T>
 {
-    public interface IEventObservable<T> : IObservable<T>
-    {
-        void PublishEvent(T userEvent);
+    void PublishEvent(T userEvent);
 
-        void OnError(Exception error);
+    void OnError(Exception error);
 
-        void OnCompleted();
-    }
+    void OnCompleted();
 }

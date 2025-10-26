@@ -1,9 +1,8 @@
 ﻿using MSDisEventApplication.Models;
 
-namespace MSDisEventApplication.Data
+namespace MSDisEventApplication.Data;
+
+public interface IDataStorage
 {
-    public interface IDataStorage
-    {
-        void SaveEvent(UserEvent userEvent);
-    }
+    void SaveEvent(UserEvent userEvent);
 }
