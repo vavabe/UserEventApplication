@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using Moq;
-using MSDisEventApplication.Data;
+using MSDisEventApplication.Data.Interfaces;
 using MSDisEventApplication.Models;
 using MSDisEventApplication.Services;
 using System;

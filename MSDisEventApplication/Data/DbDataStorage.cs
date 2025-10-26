@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Options;
+using MSDisEventApplication.Data.Interfaces;
 using MSDisEventApplication.Models;
 using MSDisEventApplication.Options;
 using Npgsql;

@@ -1,6 +1,6 @@
 ﻿using MSDisEventApplication.Models;
 
-namespace MSDisEventApplication.Data;
+namespace MSDisEventApplication.Data.Interfaces;
 
 public interface IDataStorage
 {
