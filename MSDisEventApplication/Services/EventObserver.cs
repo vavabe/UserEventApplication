@@ -1,4 +1,4 @@
-﻿using MSDisEventApplication.Data;
+﻿using MSDisEventApplication.Data.Interfaces;
 using MSDisEventApplication.Models;
 using MSDisEventApplication.Services.Interfaces;
 

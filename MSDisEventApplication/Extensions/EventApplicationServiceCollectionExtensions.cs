@@ -1,4 +1,5 @@
 ﻿using MSDisEventApplication.Data;
+using MSDisEventApplication.Data.Interfaces;
 using MSDisEventApplication.Models;
 using MSDisEventApplication.Options;
 using MSDisEventApplication.Services;
@@ -15,7 +16,7 @@ public static class EventApplicationServiceCollectionExtensions
         services.AddSingleton<IEventObservable<UserEvent>, EventObservable>();
         services.AddSingleton<IEventObserver, EventObserver>();
         services.AddSingleton<IDataStorage, DbDataStorage>();
-        services.AddHostedService<EventObservingService>();
+        services.AddHostedService<EventBackgroundService>();
         services.AddHostedService<KafkaBackgroundService>();
 
         return services;

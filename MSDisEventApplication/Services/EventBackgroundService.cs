@@ -4,14 +4,14 @@ using MSDisEventApplication.Services.Interfaces;
 
 namespace MSDisEventApplication.Services;
 
-public class EventObservingService : IHostedService
+public class EventBackgroundService : IHostedService
 {
     private IDisposable? _observerSubscription;
-    private readonly ILogger<EventObservingService> _logger;
+    private readonly ILogger<EventBackgroundService> _logger;
     private readonly IEventObservable<UserEvent> _eventObservable;
     private readonly IEventObserver _eventObserver;
 
-    public EventObservingService( ILogger<EventObservingService> logger, 
+    public EventBackgroundService(ILogger<EventBackgroundService> logger, 
         IEventObservable<UserEvent> eventObservable, 
         IEventObserver eventObserver)
     {
